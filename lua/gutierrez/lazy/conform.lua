@@ -9,17 +9,21 @@ return {
             },
             formatters_by_ft = {
                 c = { "clang-format" },
-                --py = { "python-format" },
+                python = { "pycln", "isort", "black" },
                 cpp = { "clang-format" },
                 lua = { "stylua" },
                 go = { "gofmt" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
-                elixir = { "mix" },
+                typescriptreact = { "prettier" },
+                rust = { "rustfmt" },
             },
             formatters = {
                 ["clang-format"] = {
                     prepend_args = { "-style=file", "-fallback-style=LLVM" },
+                },
+                ["stylua"] = {
+                    prepend_args = { "--indent-type", "Spaces" },
                 },
             },
         })
