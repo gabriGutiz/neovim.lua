@@ -1,38 +1,38 @@
-
 require("gutierrez.remap")
 require("gutierrez.lazy_init")
 
 local g = vim.g
 local opt = vim.opt
 
-----------------------------------------------------------
--- Colorscheme
-----------------------------------------------------------
--- vim.cmd.colorscheme("rose-pine-moon")
-vim.cmd.colorscheme("neomodern")
+vim.cmd.colorscheme("rose-pine-moon")
+-- vim.cmd.colorscheme("neomodern")
 
-----------------------------------------------------------
--- Folder navigation style
-----------------------------------------------------------
 g.netrw_browse_split = 0
 g.netrw_banner = 0
 g.netrw_winsize = 25
 
-----------------------------------------------------------
--- UI
-----------------------------------------------------------
-opt.showmatch = true     -- highlight matching parenthesis
-opt.colorcolumn = "90"   -- column maker
-opt.ignorecase = true    -- ignore case letters for seach
+opt.showmatch = true -- highlight matching parenthesis
+opt.colorcolumn = "90" -- column maker
+opt.ignorecase = true -- ignore case letters for seach
 
 vim.wo.relativenumber = true
 vim.wo.number = true
 
-----------------------------------------------------------
--- Tabs and ident
-----------------------------------------------------------
-opt.expandtab = true     -- use spaces instead of tabs
-opt.shiftwidth = 4       -- shift 4 spaces when tab
-opt.tabstop = 4          -- tab size
-opt.smartindent = true   -- autoindent new lines
+opt.expandtab = true -- use spaces instead of tabs
+opt.shiftwidth = 4 -- shift 4 spaces when tab
+opt.tabstop = 4 -- tab size
+opt.smartindent = true -- autoindent new lines
 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
+
+vim.api.nvim_set_hl(0, "ExtraWhitespace", { ctermbg = "darkred", bg = "darkred" })
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+    pattern = "*",
+    callback = function()
+        vim.fn.matchadd("ExtraWhitespace", [[\s\+$]])
+    end,
+})
