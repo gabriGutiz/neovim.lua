@@ -27,7 +27,7 @@ return {
             --["_"] = { "actions.open_cwd", mode = "n" },
             --["`"] = { "actions.cd", mode = "n" },
             --["~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
-            ["s"] = { "actions.change_sort", mode = "n" },
+            ["<C-s>"] = { "actions.change_sort", mode = "n" },
             --["gx"] = "actions.open_external",
             ["."] = { "actions.toggle_hidden", mode = "n" },
             --["g\\"] = { "actions.toggle_trash", mode = "n" },
