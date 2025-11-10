@@ -1,5 +1,6 @@
 require("gutierrez.remap")
 require("gutierrez.lazy_init")
+require("gutierrez.temp_file")
 
 local g = vim.g
 local opt = vim.opt

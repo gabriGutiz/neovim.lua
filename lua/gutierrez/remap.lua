@@ -30,3 +30,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("i", "<C-h>", function()
     vim.lsp.buf.signature_help()
 end)
+
+vim.keymap.set("n", "<leader>t", function()
+    local name = vim.fn.input("temp buf name > ")
+    vim.cmd("Scratch " .. name)
+end)
