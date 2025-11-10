@@ -25,6 +25,9 @@ return {
                 ["stylua"] = {
                     prepend_args = { "--indent-type", "Spaces" },
                 },
+                ["gofmt"] = {
+                    prepend_args = { "-s" },
+                },
             },
         })
 
