@@ -24,6 +24,8 @@ opt.shiftwidth = 4 -- shift 4 spaces when tab
 opt.tabstop = 4 -- tab size
 opt.smartindent = true -- autoindent new lines
 
+opt.guicursor = "i:block-blinkwait1000-blinkon500-blinkoff500"
+
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = "*",
     command = [[%s/\s\+$//e]],
