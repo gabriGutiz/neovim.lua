@@ -1,18 +1,17 @@
 return {
     {
-        dir = "~/personal/termacro",
-        name = "termacro",
-        config = function ()
-            require('termacro').setup({
+        "gabriGutiz/termacro.nvim",
+        config = function()
+            require("termacro").setup({
                 default_commands = {
                     {
                         key = "l",
                         command = "ls -al",
-                        buffer = true
-                    }
+                        buffer = true,
+                    },
                 },
-                execute_key = "e"
+                execute_key = "e",
             })
-        end
-    }
+        end,
+    },
 }
