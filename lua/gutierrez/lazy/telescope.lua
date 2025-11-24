@@ -8,9 +8,12 @@ return {
     config = function()
         require("telescope").setup({
             defaults = {
-                layout_strategy = "horizontal",
+                path_display = {
+                    "filename_first",
+                },
+                layout_strategy = "vertical",
                 layout_config = {
-                    preview_width = 0.65,
+                    preview_height = 0.35,
                 },
             },
         })
